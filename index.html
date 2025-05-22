@@ -3,10 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>foxden</title>
+    <title>My Firefox Startpage</title>
+    <style>
+        /* Firefox UI Inspired Colors */
+        :root {
+            --firefox-bg-dark: #20232A; /* A common dark background in Firefox themes */
+            --firefox-bg-elements-dark: #2B2B2B;
+            --firefox-text-dark: #F0F0F0; /* Light text for dark backgrounds */
+            --icon-color: #000000; /* Black icons as requested */
+            --icon-hover-bg: #353940; /* Subtle hover background */
+            --icon-size: 48px; /* Define a consistent size for icons */
+        }
+
+        body {
+            background-color: var(--firefox-bg-dark);
+            color: var(--firefox-text-dark);
+            display: grid; /* Simple way to center a single element */
+            place-items: center; /* Centers horizontally and vertically */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            overflow: hidden; /* Hide scrollbars if content is slightly too big during transitions */
+        }
+
+        .button-container {
+            display: flex;
+            gap: 30px; /* Space between buttons */
+            align-items: center; /* Vertically align items if they have different intrinsic heights */
+        }
+
+        .icon-button {
+            display: flex; /* To center the SVG inside the anchor */
+            justify-content: center;
+            align-items: center;
+            width: calc(var(--icon-size) + 30px); /* Add padding to width */
+            height: calc(var(--icon-size) + 30px); /* Add padding to height */
+            text-decoration: none;
+            border-radius: 12px; /* Rounded corners for button feel */
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .icon-button svg {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            fill: var(--icon-color); /* Explicitly set icon color */
+            transition: transform 0.15s ease-in-out;
+        }
+
+        .icon-button:hover {
+            background-color: var(--icon-hover-bg);
+            transform: translateY(-3px); /* Slight lift on hover */
+        }
+
+        .icon-button:hover svg {
+            /* Optional: slight scale on SVG itself for more dynamic hover */
+            /* transform: scale(1.05); */
+        }
+
+        .icon-button:active {
+            transform: translateY(-1px); /* Press down effect */
+        }
+
+        /* Specific styles if needed, though fill="black" in SVG is good */
+        .youtube-icon {}
+        .instagram-icon {}
+        .play-icon {}
+
+    </style>
 </head>
 <body>
-    <h1> 0_0 </h1>
-    <p>25nvr</p>
+
+    <div class="button-container">
+        <a href="https://www.youtube.com" target="_blank" class="icon-button" aria-label="YouTube">
+            <!-- YouTube SVG Icon (Black) -->
+            <svg class="youtube-icon" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.348.465A3.482 3.482 0 0024.89.02C22.72.003 14 .003 14 .003S5.28.003 3.11.02A3.482 3.482 0 00.652.465C.002 1.677 0 5.294 0 10s.002 8.323.652 9.535a3.44 3.44 0 002.458.445C5.28 19.997 14 19.997 14 19.997s8.72 0 10.89-.02a3.44 3.44 0 002.458-.445C27.998 18.323 28 14.706 28 10s-.002-8.323-.652-9.535zM11.197 14.28V5.72l7.614 4.28-7.614 4.28z" fill-rule="evenodd" clip-rule="evenodd"/>
+            </svg>
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank" class="icon-button" aria-label="Instagram">
+            <!-- Instagram SVG Icon (Black) -->
+            <svg class="instagram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.455.717-2.126 1.387S.935 3.356.63 4.14C.333 4.905.13 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.26 2.148.558 2.913.308.783.718 1.457 1.387 2.126s1.343.92 2.126 1.387c.766.296 1.636.498 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.783-.308 1.457-.718 2.126-1.387s.92-1.343 1.387-2.126c.296-.765.498-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.308-.783-.718-1.457-1.387-2.126S20.643.935 19.86.63c-.765-.297-1.636-.498-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.07 1.17.05 1.805.248 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.056 1.265.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.053 1.17-.248 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.265.056-1.646.07-4.85.072s-3.585-.015-4.85-.074c-1.17-.053-1.805-.248-2.227-.413-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.056-1.265-.07-1.646-.07-4.85s.015-3.585.072-4.85c.053-1.17.248-1.805.413-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413C8.415 2.176 8.797 2.16 12 2.16zm0 5.467c-2.485 0-4.482 1.997-4.482 4.482s1.997 4.482 4.482 4.482 4.482-1.997 4.482-4.482-1.997-4.482-4.482-4.482zm0 7.227c-1.512 0-2.745-1.233-2.745-2.745s1.233-2.745 2.745-2.745 2.745 1.233 2.745 2.745-1.233 2.745-2.745 2.745zm5.532-8.64c-.922 0-1.67-.748-1.67-1.67s.748-1.67 1.67-1.67 1.67.748 1.67 1.67-.748 1.67-1.67 1.67z"/>
+            </svg>
+        </a>
+
+        <a href="https://fmhy.net" target="_blank" class="icon-button" aria-label="FMHY (Play)">
+            <!-- Play/Triangle SVG Icon (Black) -->
+            <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5v14l11-7z"/> <!-- Simple play triangle -->
+                <!-- A more centered play button often looks like this:
+                <path d="M6 19V5l14 7-14 7z"/>
+                Adjust points as needed for visual balance -->
+            </svg>
+        </a>
+    </div>
+
 </body>
 </html>
